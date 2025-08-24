@@ -24,7 +24,7 @@ class CosmosDBUtils:
         collection_name (str): Name of the Cosmos DB container (collection).
     """
 
-    def __init__(self, collection: str, auth_strategy: CosmosDbAuthStrategy):
+    def __init__(self, database_name: str, collection: str, auth_strategy: CosmosDbAuthStrategy):
         """Initializes the CosmosDBUtils instance.
 
         Args:
@@ -33,7 +33,7 @@ class CosmosDBUtils:
                 Must be either "ConnectionString" or "DefaultCredential".
         """
         self.client: CosmosClient = CosmosDBUtils.__prepare_client(auth_strategy)
-        self.database_name: str = os.environ["COSMOS_DATABASE_NAME"]
+        self.database_name: str = database_name
         self.collection_name: str = collection
 
     @staticmethod

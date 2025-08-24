@@ -317,6 +317,7 @@ class SearchClientDao(SearchBaseDao):
             the count returned is an approximation.
         :rtype: list[dict]
         """
+
         search_results = self.client.search(
             search_text=search_text,
             include_total_count=include_total_count,
@@ -326,8 +327,6 @@ class SearchClientDao(SearchBaseDao):
             skip=skip,
             top=top
         )
-
-        search_results.get_facets()
 
         query_results: list[dict] = []
 

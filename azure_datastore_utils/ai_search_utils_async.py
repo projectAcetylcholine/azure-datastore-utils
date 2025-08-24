@@ -11,7 +11,7 @@ from azure.search.documents.indexes._generated.models import FieldMapping, Index
 from azure.search.documents.indexes.aio import SearchIndexClient, SearchIndexerClient
 from azure.search.documents.indexes.models import SearchIndex, SearchIndexer, SearchIndexerDataSourceConnection
 
-from azure_datastore_utils import AISearchAuthStrategy
+from .ai_search_utils import AISearchAuthStrategy
 
 
 class AsyncSearchBaseDao:
