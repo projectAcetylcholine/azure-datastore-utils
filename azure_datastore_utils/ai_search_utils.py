@@ -14,8 +14,7 @@ AISearchAuthStrategy = Literal['Password', 'ServicePrincipal', 'ManagedIdentity'
 
 
 class SearchBaseDao:
-    """
-    Base class for Azure Cognitive Search data access operations.
+    """Base class for Azure Cognitive Search data access operations.
 
     Handles environment configuration and authentication setup
     for interacting with Azure AI Search services.
