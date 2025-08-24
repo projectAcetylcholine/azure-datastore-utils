@@ -1,4 +1,3 @@
-
 import json
 import os
 
@@ -8,9 +7,18 @@ from redis import Redis
 from redis_entraid.cred_provider import create_from_service_principal
 
 RedisAuthStrategy = Literal['Password', 'ServicePrincipal', 'ManagedIdentity']
+"""
+Redis Authentication Strategy
+    - Password means you authenticate with REDIS_PASSWORD in the environment variable
+    - ServicePrincipal and ManagedIdentity means you need to set the 
+    AZURE_TENANT_ID, AZURE_CLIENT_ID & AZURE_CLIENT_SECRET environment variables 
+"""
 
 class RedisUtil:
-    """Utility class to handle interacting with Redis to store and retrieve cached data"""
+    """Utility class to handle interacting with Redis to store and retrieve cached data
+
+    We need the REDIS_HOST and REDIS_PORT environment variables defined before using this class
+    """
 
     def __init__(self, auth_strategy: RedisAuthStrategy):
         """Initialize RedisUtil object"""
